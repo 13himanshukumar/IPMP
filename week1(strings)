@@ -1,0 +1,39 @@
+//C++ code to check whether a string is palindrome or not
+#include<iostream.h>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    string Str;
+    cout<<"enter the string";
+    cin>>Str;
+    cout<< check(Str);
+ 
+    return 0;
+}
+ 
+string check(string S)
+{
+    for (int i = 0; i < S.length() / 2; i++) {
+
+        if (S[i] != S[S.length() - i - 1]) {
+            return "No";
+        }
+    }
+    return "Yes";
+}
+
+//OR, by using the reverse function in string
+
+string check(string Str)
+{
+    string S = Str;
+    reverse(S.begin(), S.end());
+    if (Str== S) {
+        return "Yes";
+    }
+    else {
+        return "No";
+    }
+}
